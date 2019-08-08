@@ -1,0 +1,15 @@
+{
+    "name": "lubaro/brain-games",
+    "description": "A set of mini-games for CLI. First level project on hexlet.io.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "LubaRo",
+            "email": "user.luyba@gmail.com"
+        }
+    ],
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ]
+}
