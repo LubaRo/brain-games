@@ -14,7 +14,13 @@
   "autoload": {
     "files": ["src/cli.php"]
   },
+  "scripts": {
+    "phpcs": "phpcs"
+  },
   "require": {
     "wp-cli/php-cli-tools": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*"
   }
 }
