@@ -9,10 +9,14 @@
     }
   ],
   "bin": [
-    "bin/brain-games"
+    "bin/brain-games",
+    "bin/brain-even"
   ],
   "autoload": {
-    "files": ["src/cli.php"]
+    "files": [
+      "src/cli.php",
+      "src/even_game.php"
+    ]
   },
   "scripts": {
     "phpcs": "phpcs"
