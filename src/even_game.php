@@ -34,7 +34,8 @@ function fn_get_random_number()
 function fn_ask_question()
 {
     $random_num = fn_get_random_number();
-    $user_answer = prompt("Question: {$random_num}\n");
+    $user_answer = prompt("Question: {$random_num}");
+    line("Your answer: %s!\n", $user_answer);
 
     list($is_correct, $correct_answer) = fn_check_answer($random_num, $user_answer);
 
