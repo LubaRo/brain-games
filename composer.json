@@ -2,6 +2,7 @@
   "name": "lubaro/brain-games",
   "description": "A set of mini-games for CLI. First level project on hexlet.io.",
   "type": "project",
+  "license": "MIT",
   "authors": [
     {
       "name": "LubaRo",
