@@ -13,3 +13,10 @@ function run()
 
     return $name;
 }
+
+function greet()
+{
+    echo ("Welcome to the Brain Games!\n\n");
+
+    return;
+}
