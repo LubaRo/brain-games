@@ -28,7 +28,7 @@ function even_game_run($user_name)
 
 function fn_get_random_number()
 {
-    return rand();
+    return rand(1, 1000);
 }
 
 function fn_ask_question()

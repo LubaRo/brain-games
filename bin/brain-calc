@@ -2,7 +2,7 @@
 <?php
 
 use function \BrainGames\Cli\run;
-             \BrainGames\EvenGame\even_game_run;
+use function \BrainGames\EvenGame\even_game_run;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -19,4 +19,4 @@ echo ("Answer \"yes\" if number even otherwise answer \"no\".\n\n");
 
 $user_name = run();
 
-even_game_run($user_name);
+calculator_game_run($user_name);
