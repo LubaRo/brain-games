@@ -24,6 +24,8 @@ function even_game_run($user_name)
     }
 
     line("Congratulations, %s!\n", $user_name);
+
+    return true;
 }
 
 function fn_get_random_number()
