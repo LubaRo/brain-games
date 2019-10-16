@@ -2,26 +2,29 @@
 
 namespace BrainGames\CalculatorGame;
 
-use function \cli\line as line;
-use function \cli\prompt as prompt;
+use function \BrainGames\Engine\play_game;
 
-function calculator_game_run($user_name)
+function calculator_game_run()
 {
-    $correct_answers = 0;
+    play_game(
+        function () {
+            list($num1, $num2, $math_sign) = fn_get_expression_components();
+            $expression = "{$num1} {$math_sign} {$num2}";
 
-    while ($correct_answers < 3) {
-        list($is_correct, $correct_answer, $user_answer) = fn_ask_question();
+            $question = "Question: {$expression}";
+            $correct_answer = fn_get_correct_answer($expression);
 
-        if ($is_correct === true) {
-            $correct_answers += 1;
-            line("Correct!\n");
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.\n\n" .
-                "Let's try again, %s!", $user_answer, $correct_answer, $user_name);
-
-            return false;
+            return array($question, (string) $correct_answer);
         }
-    }
+    );
+}
 
-    line("Congratulations, %s!\n", $user_name);
+function fn_get_expression_components()
+{
+    return array(2, 5, '+');
+}
+
+function fn_get_correct_answer($expression)
+{
+    return eval('return ' . $expression . ';');
 }

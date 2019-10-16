@@ -5,7 +5,7 @@ namespace BrainGames\Cli;
 use function \cli\line as line;
 use function \cli\prompt as prompt;
 
-function run()
+function get_user_name()
 {
     $name = prompt('May I have your name?');
 
@@ -16,7 +16,7 @@ function run()
 
 function greet()
 {
-    echo ("Welcome to the Brain Games!\n\n");
+    line("Welcome to the Brain Games!\n\n");
 
     return;
 }

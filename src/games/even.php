@@ -2,63 +2,22 @@
 
 namespace BrainGames\EvenGame;
 
-use function \cli\line as line;
-use function \cli\prompt as prompt;
+use function \BrainGames\Engine\play_game,
+             \BrainGames\Engine\fn_format_answer,
+             \BrainGames\Engine\fn_get_random_number;
 
-function even_game_run($user_name)
+function even_game_play()
 {
-    $correct_answers = 0;
+    play_game(
+        function () {
+            $random_num = fn_get_random_number();
 
-    while ($correct_answers < 3) {
-        list($is_correct, $correct_answer, $user_answer) = fn_ask_question();
+            $question = "Question: {$random_num}";
+            $correct_answer = fn_get_correct_answer($random_num);
 
-        if ($is_correct === true) {
-            $correct_answers += 1;
-            line("Correct!\n");
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.\n\n" .
-                "Let's try again, %s!", $user_answer, $correct_answer, $user_name);
-
-            return false;
+            return array($question, $correct_answer);
         }
-    }
-
-    line("Congratulations, %s!\n", $user_name);
-
-    return true;
-}
-
-function fn_get_random_number()
-{
-    return rand(1, 1000);
-}
-
-function fn_ask_question()
-{
-    $random_num = fn_get_random_number();
-    $user_answer = prompt("Question: {$random_num}");
-    line("Your answer: %s!\n", $user_answer);
-
-    list($is_correct, $correct_answer) = fn_check_answer($random_num, $user_answer);
-
-    return array($is_correct, $correct_answer, $user_answer);
-}
-
-function fn_check_answer($number, $user_answer)
-{
-    $format_answer = fn_format_answer($user_answer);
-    $correct_answer = fn_get_correct_answer($number);
-
-    $is_correct = $correct_answer === $format_answer ? true : false;
-
-    return array($is_correct, $correct_answer);
-}
-
-function fn_format_answer($input)
-{
-    $formatted = mb_strtolower(trim($input));
-
-    return $formatted;
+    );
 }
 
 function fn_is_even($number)

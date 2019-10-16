@@ -3,7 +3,7 @@
 
 use function \BrainGames\Cli\run,
              \BrainGames\Cli\greet,
-             \BrainGames\EvenGame\even_game_run;
+             \BrainGames\EvenGame\even_game_play;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -14,10 +14,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-greet();
+define('GAME_RULES', "Answer \"yes\" if number even otherwise answer \"no\".\n\n");
 
-echo ("Answer \"yes\" if number even otherwise answer \"no\".\n\n");
-
-$user_name = run();
-
-even_game_run($user_name);
+even_game_play();
