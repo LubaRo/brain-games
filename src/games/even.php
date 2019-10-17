@@ -5,7 +5,7 @@ namespace BrainGames\EvenGame;
 use function BrainGames\Engine\play_game;
 use function BrainGames\Engine\fn_get_random_number;
 
-function even_game_play()
+function gcd_game_run()
 {
     play_game(
         function () {
