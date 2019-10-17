@@ -2,7 +2,7 @@
 
 namespace BrainGames\CalculatorGame;
 
-use function \BrainGames\Engine\play_game;
+use function BrainGames\Engine\play_game;
 
 function calculator_game_run()
 {

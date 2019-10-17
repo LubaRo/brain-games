@@ -2,10 +2,10 @@
 
 namespace BrainGames\Engine;
 
-use function \cli\line,
-             \cli\prompt,
-             BrainGames\Cli\get_user_name,
-             BrainGames\Cli\greet;
+use function cli\line;
+use function cli\prompt;
+use function BrainGames\Cli\get_user_name;
+use function BrainGames\Cli\greet;
 
 function fn_format_answer($input)
 {
@@ -42,8 +42,8 @@ function play_game(callable $fn_ask_question)
     while ($correct_answers < 3) {
         list($question, $correct_answer) = $fn_ask_question();
 
-        $user_answer = prompt($question);
-        line("Your answer: %s!\n", $user_answer);
+        $user_answer = prompt("Question: " . $question);
+        line("Your answer: %s\n", $user_answer);
 
         $is_correct = fn_check_answer($correct_answer, $user_answer);
 
@@ -58,7 +58,7 @@ function play_game(callable $fn_ask_question)
         }
     }
 
-    line("Congratulations, %s!\n", $user_name);
+    line("Congratulations, %s!", $user_name);
 
     return true;
 }
