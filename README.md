@@ -12,3 +12,8 @@ ___
 Brain calculator:
 
 [![asciicast](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh.svg)](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh)
+
+___
+Greatest common divisor:
+
+[![asciicast](https://asciinema.org/a/276809.svg)](https://asciinema.org/a/276809)
