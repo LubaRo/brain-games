@@ -13,9 +13,7 @@ function calculator_game_run()
     play_game(
         function () {
             list($num1, $num2, $math_sign) = fn_get_expression_components();
-            $expression = "{$num1} {$math_sign} {$num2}";
-
-            $question = "Question: {$expression}";
+            $question = "{$num1} {$math_sign} {$num2}";
             $correct_answer = fn_get_correct_answer($num1, $num2, $math_sign);
 
             return array($question, (string) $correct_answer);
