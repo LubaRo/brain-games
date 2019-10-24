@@ -7,3 +7,8 @@ ___
 Brain even:
    
 [![asciicast](https://asciinema.org/a/5BLY0IJGVDkmTmMbqu0gVt7QA.svg)](https://asciinema.org/a/5BLY0IJGVDkmTmMbqu0gVt7QA)
+
+___
+Brain calculator:
+
+[![asciicast](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh.svg)](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh)
