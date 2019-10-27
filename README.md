@@ -17,3 +17,8 @@ ___
 Greatest common divisor:
 
 [![asciicast](https://asciinema.org/a/276809.svg)](https://asciinema.org/a/276809)
+
+___
+Progression:
+
+[![asciicast](https://asciinema.org/a/277304.svg)](https://asciinema.org/a/277304)
