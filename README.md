@@ -22,3 +22,8 @@ ___
 Progression:
 
 [![asciicast](https://asciinema.org/a/277304.svg)](https://asciinema.org/a/277304)
+
+___
+Is prime:
+
+[![asciicast](https://asciinema.org/a/278523.svg)](https://asciinema.org/a/278523)
