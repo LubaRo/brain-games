@@ -3,20 +3,20 @@
 namespace BrainGames\EvenGame;
 
 use function BrainGames\Engine\play_game;
-use function BrainGames\Engine\fn_get_random_number;
 
 function even_game_play()
 {
-    play_game(
-        function () {
-            $random_num = fn_get_random_number();
+    $game_rules =  "Answer \"yes\" if number even otherwise answer \"no\".\n";
+    $fn_ask_question = function () {
+        $random_num = rand(1, 100);
 
-            $question = "{$random_num}";
-            $correct_answer = fn_get_correct_answer($random_num);
+        $question = "{$random_num}";
+        $correct_answer = fn_get_correct_answer($random_num);
 
-            return array($question, $correct_answer);
-        }
-    );
+        return array($question, $correct_answer);
+    };
+
+    play_game($game_rules, $fn_ask_question);
 
     return true;
 }

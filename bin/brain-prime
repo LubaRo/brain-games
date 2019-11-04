@@ -12,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define('GAME_RULES', "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n");
-
 prime_game_run();

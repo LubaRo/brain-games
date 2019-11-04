@@ -12,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define('GAME_RULES', "Find the greatest common divisor of given numbers.\n");
-
 gcd_game_run();

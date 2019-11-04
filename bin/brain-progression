@@ -12,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define('GAME_RULES', "What number is missing in the progression?\n");
-
 progression_game_run();

@@ -4,48 +4,27 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\get_user_name;
 use function BrainGames\Cli\greet;
 
-function fn_format_answer($input)
+define('ATTEMPTS_QTY', 3);
+
+function play_game(string $rules, callable $fn_ask_question)
 {
-    $formatted = mb_strtolower(trim($input));
-
-    return $formatted;
-}
-
-function fn_check_answer($correct_answer, $user_answer)
-{
-    $format_answer = fn_format_answer($user_answer);
-    $is_correct = $correct_answer === $format_answer ? true : false;
-
-    return $is_correct;
-}
-
-function fn_get_random_number($min = 1, $max = 100)
-{
-    return rand($min, $max);
-}
-
-function play_game(callable $fn_ask_question)
-{
-    greet();
-
-    if (defined('GAME_RULES')) {
-        line(GAME_RULES);
-    }
-
-    $user_name = get_user_name();
+    line("\nWelcome to the Brain Games!");
+    line($rules);
 
     $correct_answers = 0;
+    $user_name = prompt('May I have your name?');
 
-    while ($correct_answers < 3) {
+    line("Hello, %s!\n", $user_name);
+
+    while ($correct_answers < ATTEMPTS_QTY) {
         list($question, $correct_answer) = $fn_ask_question();
 
         $user_answer = prompt("Question: " . $question);
         line("Your answer: %s\n", $user_answer);
 
-        $is_correct = fn_check_answer($correct_answer, $user_answer);
+        $is_correct = $correct_answer === $user_answer ? true : false;
 
         if ($is_correct === true) {
             $correct_answers += 1;

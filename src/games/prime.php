@@ -3,19 +3,18 @@
 namespace BrainGames\PrimeGame;
 
 use function BrainGames\Engine\play_game;
-use function BrainGames\Engine\fn_get_random_number;
 
 function prime_game_run()
 {
-    play_game(
-        function () {
+    $game_rules = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".\n";
+    $fn_ask_question = function () {
+        $number = rand(1, 100);
+        $correct_answer = is_prime($number) === true ? 'yes' : 'no';
 
-            $number = fn_get_random_number();
-            $correct_answer = is_prime($number) === true ? 'yes' : 'no';
+        return array($number, $correct_answer);
+    };
 
-            return array($number, $correct_answer);
-        }
-    );
+    play_game($game_rules, $fn_ask_question);
 }
 
 function is_prime($num)

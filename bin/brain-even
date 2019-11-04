@@ -12,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define('GAME_RULES', "Answer \"yes\" if number even otherwise answer \"no\".\n");
-
 even_game_play();
