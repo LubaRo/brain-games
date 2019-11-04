@@ -6,6 +6,8 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\greet;
 
+define('ATTEMPTS_QTY', 3);
+
 function fn_format_answer($input)
 {
     $formatted = mb_strtolower(trim($input));
@@ -31,7 +33,7 @@ function play_game(string $rules, callable $fn_ask_question)
 
     line("Hello, %s!\n", $user_name);
 
-    while ($correct_answers < 3) {
+    while ($correct_answers < ATTEMPTS_QTY) {
         list($question, $correct_answer) = $fn_ask_question();
 
         $user_answer = prompt("Question: " . $question);
