@@ -4,7 +4,6 @@ namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\get_user_name;
 use function BrainGames\Cli\greet;
 
 function fn_format_answer($input)
@@ -22,18 +21,15 @@ function fn_check_answer($correct_answer, $user_answer)
     return $is_correct;
 }
 
-function fn_get_random_number($min = 1, $max = 100)
-{
-    return rand($min, $max);
-}
-
 function play_game(string $rules, callable $fn_ask_question)
 {
-    greet();
+    line("\nWelcome to the Brain Games!");
     line($rules);
 
-    $user_name = get_user_name();
     $correct_answers = 0;
+    $user_name = prompt('May I have your name?');
+
+    line("Hello, %s!\n", $user_name);
 
     while ($correct_answers < 3) {
         list($question, $correct_answer) = $fn_ask_question();

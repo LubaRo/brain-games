@@ -3,7 +3,6 @@
 namespace BrainGames\CalculatorGame;
 
 use function BrainGames\Engine\play_game;
-use function BrainGames\Engine\fn_get_random_number;
 
 define('MATH_SIGNS', array('+', '-', '*'));
 define('DEFAULT_SIGN', '+');
@@ -24,10 +23,10 @@ function calculator_game_run()
 
 function fn_get_expression_components()
 {
-    $num1 = fn_get_random_number(1, 10);
-    $num2 = fn_get_random_number(1, 10);
+    $num1 = rand(1, 10);
+    $num2 = rand(1, 10);
 
-    $sign_key = fn_get_random_number(1, 3);
+    $sign_key = rand(1, 3);
     $math_sign = isset(MATH_SIGNS[$sign_key]) ? MATH_SIGNS[$sign_key] : DEFAULT_SIGN;
     return array($num1, $num2, $math_sign);
 }
