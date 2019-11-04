@@ -8,21 +8,6 @@ use function BrainGames\Cli\greet;
 
 define('ATTEMPTS_QTY', 3);
 
-function fn_format_answer($input)
-{
-    $formatted = mb_strtolower(trim($input));
-
-    return $formatted;
-}
-
-function fn_check_answer($correct_answer, $user_answer)
-{
-    $format_answer = fn_format_answer($user_answer);
-    $is_correct = $correct_answer === $format_answer ? true : false;
-
-    return $is_correct;
-}
-
 function play_game(string $rules, callable $fn_ask_question)
 {
     line("\nWelcome to the Brain Games!");
@@ -39,7 +24,7 @@ function play_game(string $rules, callable $fn_ask_question)
         $user_answer = prompt("Question: " . $question);
         line("Your answer: %s\n", $user_answer);
 
-        $is_correct = fn_check_answer($correct_answer, $user_answer);
+        $is_correct = $correct_answer === $user_answer ? true : false;
 
         if ($is_correct === true) {
             $correct_answers += 1;
