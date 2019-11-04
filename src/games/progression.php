@@ -7,15 +7,15 @@ use function BrainGames\Engine\fn_get_random_number;
 
 function progression_game_run()
 {
-    play_game(
-        function () {
+    $game_rules = "What number is missing in the progression?\n";
+    $fn_ask_question = function () {
+        $progression_numbers = fn_get_progression_numbers();
+        list($question, $correct_answer) = fn_get_question_data($progression_numbers);
 
-            $progression_numbers = fn_get_progression_numbers();
-            list($question, $correct_answer) = fn_get_question_data($progression_numbers);
+        return array($question, (string) $correct_answer);
+    };
 
-            return array($question, (string) $correct_answer);
-        }
-    );
+    play_game($game_rules, $fn_ask_question);
 }
 
 function fn_get_progression_numbers($qty = 10)

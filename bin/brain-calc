@@ -12,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-define('GAME_RULES', "What is the result of the expression?.\n");
-
 calculator_game_run();

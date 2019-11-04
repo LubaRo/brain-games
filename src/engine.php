@@ -27,16 +27,12 @@ function fn_get_random_number($min = 1, $max = 100)
     return rand($min, $max);
 }
 
-function play_game(callable $fn_ask_question)
+function play_game(string $rules, callable $fn_ask_question)
 {
     greet();
-
-    if (defined('GAME_RULES')) {
-        line(GAME_RULES);
-    }
+    line($rules);
 
     $user_name = get_user_name();
-
     $correct_answers = 0;
 
     while ($correct_answers < 3) {
