@@ -36,7 +36,7 @@ function fn_get_progression_numbers($qty = 10)
 
 function fn_get_question_data($progression_numbers, $replace = '..')
 {
-    $qty = sizeof($progression_numbers);
+    $qty = sizeof($progression_numbers) - 1;
     $hidden_num_postion = rand(1, $qty);
 
     $answer = $progression_numbers[$hidden_num_postion];
