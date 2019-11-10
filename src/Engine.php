@@ -8,10 +8,11 @@ use function BrainGames\Cli\greet;
 
 define('ATTEMPTS_QTY', 3);
 
-function play_game(string $rules, callable $fn_ask_question)
+function play_game(string $description, callable $fn_ask_question)
 {
     line("\nWelcome to the Brain Games!");
-    line($rules);
+    line($description);
+    line();
 
     $correct_answers = 0;
     $user_name = prompt('May I have your name?');

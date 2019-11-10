@@ -4,9 +4,10 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\play_game;
 
+const DESCRIPTION = 'What number is missing in the progression?';
+
 function progression_game_run()
 {
-    $game_rules = "What number is missing in the progression?\n";
     $fn_ask_question = function () {
         $progression_numbers = fn_get_progression_numbers();
         list($question, $correct_answer) = fn_get_question_data($progression_numbers);
@@ -14,7 +15,7 @@ function progression_game_run()
         return array($question, (string) $correct_answer);
     };
 
-    play_game($game_rules, $fn_ask_question);
+    play_game(DESCRIPTION, $fn_ask_question);
 }
 
 function fn_get_progression_numbers($qty = 10)

@@ -4,9 +4,10 @@ namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\play_game;
 
+const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+
 function even_game_play()
 {
-    $game_rules =  "Answer \"yes\" if number even otherwise answer \"no\".\n";
     $fn_ask_question = function () {
         $random_num = rand(1, 100);
 
@@ -16,7 +17,7 @@ function even_game_play()
         return array($question, $correct_answer);
     };
 
-    play_game($game_rules, $fn_ask_question);
+    play_game(DESCRIPTION, $fn_ask_question);
 
     return true;
 }

@@ -7,9 +7,10 @@ use function BrainGames\Engine\play_game;
 define('MATH_SIGNS', array('+', '-', '*'));
 define('DEFAULT_SIGN', '+');
 
+const DESCRIPTION = 'What is the result of the expression?';
+
 function calculator_game_run()
 {
-    $game_rule = "What is the result of the expression?\n";
     $fn_ask_question = function () {
         list($num1, $num2, $math_sign) = fn_get_expression_components();
         $question = "{$num1} {$math_sign} {$num2}";
@@ -18,7 +19,7 @@ function calculator_game_run()
         return array($question, (string) $correct_answer);
     };
 
-    play_game($game_rule, $fn_ask_question);
+    play_game(DESCRIPTION, $fn_ask_question);
 }
 
 function fn_get_expression_components()
