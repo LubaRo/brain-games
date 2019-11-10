@@ -8,7 +8,7 @@ use function BrainGames\Cli\greet;
 
 define('ATTEMPTS_QTY', 3);
 
-function play_game(string $description, callable $fn_ask_question)
+function playGame(string $description, callable $getGameData)
 {
     line("\nWelcome to the Brain Games!");
     line($description);
@@ -20,7 +20,7 @@ function play_game(string $description, callable $fn_ask_question)
     line("Hello, %s!\n", $user_name);
 
     while ($correct_answers < ATTEMPTS_QTY) {
-        list($question, $correct_answer) = $fn_ask_question();
+        list($question, $correct_answer) = $getGameData();
 
         $user_answer = prompt("Question: " . $question);
         line("Your answer: %s\n", $user_answer);

@@ -2,23 +2,23 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\play_game;
+use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no';
 
-function prime_game_run()
+function primeGameRun()
 {
-    $fn_ask_question = function () {
+    $getGameData = function () {
         $number = rand(1, 100);
-        $correct_answer = is_prime($number) === true ? 'yes' : 'no';
+        $correct_answer = isPrime($number) === true ? 'yes' : 'no';
 
         return array($number, $correct_answer);
     };
 
-    play_game(DESCRIPTION, $fn_ask_question);
+    playGame(DESCRIPTION, $getGameData);
 }
 
-function is_prime($num)
+function isPrime($num)
 {
     if ($num < 2) {
         return false;

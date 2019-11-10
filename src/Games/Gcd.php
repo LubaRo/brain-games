@@ -2,26 +2,26 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Engine\play_game;
+use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function gcd_game_run()
+function gcdGameRun()
 {
-    $fn_ask_question = function () {
+    $getGameData = function () {
         $num1 = rand(1, 100);
         $num2 = rand(1, 100);
 
         $question = "{$num1} {$num2}";
-        $correct_answer = fn_get_gsd($num1, $num2);
+        $correct_answer = getGsd($num1, $num2);
 
         return array($question, (string) $correct_answer);
     };
 
-    play_game(DESCRIPTION, $fn_ask_question);
+    playGame(DESCRIPTION, $getGameData);
 }
 
-function fn_get_gsd($num1, $num2)
+function getGsd($num1, $num2)
 {
     while ($num1 != 0 && $num2 != 0) {
         if ($num1 > $num2) {

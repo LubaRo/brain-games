@@ -2,34 +2,34 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Engine\play_game;
+use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
-function even_game_play()
+function evenGamePlay()
 {
-    $fn_ask_question = function () {
+    $getGameData = function () {
         $random_num = rand(1, 100);
 
         $question = "{$random_num}";
-        $correct_answer = fn_get_correct_answer($random_num);
+        $correct_answer = getCorrectAnswer($random_num);
 
         return array($question, $correct_answer);
     };
 
-    play_game(DESCRIPTION, $fn_ask_question);
+    playGame(DESCRIPTION, $getGameData);
 
     return true;
 }
 
-function fn_is_even($number)
+function isEven($number)
 {
     return !($number & 1);
 }
 
-function fn_get_correct_answer($number)
+function getCorrectAnswer($number)
 {
-    $answer = fn_is_even($number);
+    $answer = isEven($number);
 
     return $answer === true ? 'yes' : 'no';
 }

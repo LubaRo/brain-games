@@ -2,23 +2,23 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\play_game;
+use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 
-function progression_game_run()
+function progressionGameRun()
 {
-    $fn_ask_question = function () {
-        $progression_numbers = fn_get_progression_numbers();
-        list($question, $correct_answer) = fn_get_question_data($progression_numbers);
+    $getGameData = function () {
+        $progression_numbers = getProgressionNumbers();
+        list($question, $correct_answer) = getQuestionData($progression_numbers);
 
         return array($question, (string) $correct_answer);
     };
 
-    play_game(DESCRIPTION, $fn_ask_question);
+    playGame(DESCRIPTION, $getGameData);
 }
 
-function fn_get_progression_numbers($qty = 10)
+function getProgressionNumbers($qty = 10)
 {
     $progression_numbers = array();
     $progression_step = rand(1, 100);
@@ -34,7 +34,7 @@ function fn_get_progression_numbers($qty = 10)
     return $progression_numbers;
 }
 
-function fn_get_question_data($progression_numbers, $replace = '..')
+function getQuestionData($progression_numbers, $replace = '..')
 {
     $qty = sizeof($progression_numbers) - 1;
     $hidden_num_postion = rand(1, $qty);
