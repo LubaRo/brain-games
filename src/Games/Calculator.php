@@ -12,11 +12,11 @@ const DESCRIPTION = 'What is the result of the expression?';
 function calculatorGameRun()
 {
     $getGameData = function () {
-        list($num1, $num2, $math_sign) = getExpressionComponents();
-        $question = "{$num1} {$math_sign} {$num2}";
-        $correct_answer = getCorrectAnswer($num1, $num2, $math_sign);
+        list($num1, $num2, $mathSign) = getExpressionComponents();
+        $question = "{$num1} {$mathSign} {$num2}";
+        $correctAnswer = getCorrectAnswer($num1, $num2, $mathSign);
 
-        return array($question, (string) $correct_answer);
+        return array($question, (string) $correctAnswer);
     };
 
     playGame(DESCRIPTION, $getGameData);
@@ -27,15 +27,15 @@ function getExpressionComponents()
     $num1 = rand(1, 10);
     $num2 = rand(1, 10);
 
-    $sign_key = rand(1, 3);
-    $math_sign = isset(MATH_SIGNS[$sign_key]) ? MATH_SIGNS[$sign_key] : DEFAULT_SIGN;
+    $signKey = rand(1, 3);
+    $mathSign = isset(MATH_SIGNS[$signKey]) ? MATH_SIGNS[$signKey] : DEFAULT_SIGN;
 
-    return array($num1, $num2, $math_sign);
+    return array($num1, $num2, $mathSign);
 }
 
-function getCorrectAnswer($num1, $num2, $math_sign)
+function getCorrectAnswer($num1, $num2, $mathSign)
 {
-    switch ($math_sign) {
+    switch ($mathSign) {
         case '+':
             return $num1 + $num2;
         case '-':

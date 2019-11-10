@@ -13,9 +13,9 @@ function gcdGameRun()
         $num2 = rand(1, 100);
 
         $question = "{$num1} {$num2}";
-        $correct_answer = getGsd($num1, $num2);
+        $correctAnswer = getGsd($num1, $num2);
 
-        return array($question, (string) $correct_answer);
+        return array($question, (string) $correctAnswer);
     };
 
     playGame(DESCRIPTION, $getGameData);

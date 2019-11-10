@@ -9,12 +9,12 @@ const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 function evenGamePlay()
 {
     $getGameData = function () {
-        $random_num = rand(1, 100);
+        $randomNum = rand(1, 100);
 
-        $question = "{$random_num}";
-        $correct_answer = getCorrectAnswer($random_num);
+        $question = "{$randomNum}";
+        $correctAnswer = getCorrectAnswer($randomNum);
 
-        return array($question, $correct_answer);
+        return array($question, $correctAnswer);
     };
 
     playGame(DESCRIPTION, $getGameData);

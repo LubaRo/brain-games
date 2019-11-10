@@ -10,9 +10,9 @@ function primeGameRun()
 {
     $getGameData = function () {
         $number = rand(1, 100);
-        $correct_answer = isPrime($number) === true ? 'yes' : 'no';
+        $correctAnswer = isPrime($number) === true ? 'yes' : 'no';
 
-        return array($number, $correct_answer);
+        return array($number, $correctAnswer);
     };
 
     playGame(DESCRIPTION, $getGameData);

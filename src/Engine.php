@@ -14,31 +14,31 @@ function playGame(string $description, callable $getGameData)
     line($description);
     line();
 
-    $correct_answers = 0;
-    $user_name = prompt('May I have your name?');
+    $correctAnswers = 0;
+    $userName = prompt('May I have your name?');
 
-    line("Hello, %s!\n", $user_name);
+    line("Hello, %s!\n", $userName);
 
-    while ($correct_answers < ATTEMPTS_QTY) {
-        list($question, $correct_answer) = $getGameData();
+    while ($correctAnswers < ATTEMPTS_QTY) {
+        list($question, $correctAnswer) = $getGameData();
 
-        $user_answer = prompt("Question: " . $question);
-        line("Your answer: %s\n", $user_answer);
+        $userAnswer = prompt("Question: " . $question);
+        line("Your answer: %s\n", $userAnswer);
 
-        $is_correct = $correct_answer === $user_answer ? true : false;
+        $isCorrect = $correctAnswer === $userAnswer ? true : false;
 
-        if ($is_correct === true) {
-            $correct_answers += 1;
+        if ($isCorrect === true) {
+            $correctAnswers += 1;
             line("Correct!\n");
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.\n\n" .
-                "Let's try again, %s!", $user_answer, $correct_answer, $user_name);
+                "Let's try again, %s!", $userAnswer, $correctAnswer, $userName);
 
             return false;
         }
     }
 
-    line("Congratulations, %s!", $user_name);
+    line("Congratulations, %s!", $userName);
 
     return true;
 }

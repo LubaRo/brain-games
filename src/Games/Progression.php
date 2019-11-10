@@ -9,10 +9,10 @@ const DESCRIPTION = 'What number is missing in the progression?';
 function progressionGameRun()
 {
     $getGameData = function () {
-        $progression_numbers = getProgressionNumbers();
-        list($question, $correct_answer) = getQuestionData($progression_numbers);
+        $progressionNumbers = getProgressionNumbers();
+        list($question, $correctAnswer) = getQuestionData($progressionNumbers);
 
-        return array($question, (string) $correct_answer);
+        return array($question, (string) $correctAnswer);
     };
 
     playGame(DESCRIPTION, $getGameData);
@@ -20,29 +20,29 @@ function progressionGameRun()
 
 function getProgressionNumbers($qty = 10)
 {
-    $progression_numbers = array();
-    $progression_step = rand(1, 100);
+    $progressionNumbers = array();
+    $progressionStep = rand(1, 100);
 
     for ($i = 0; $i < 10; $i++) {
-        if (!isset($progression_numbers[$i - 1])) {
-            $progression_numbers[$i] = rand(1, 100) + $progression_step;
+        if (!isset($progressionNumbers[$i - 1])) {
+            $progressionNumbers[$i] = rand(1, 100) + $progressionStep;
         } else {
-            $progression_numbers[$i] = $progression_numbers[$i - 1] + $progression_step;
+            $progressionNumbers[$i] = $progressionNumbers[$i - 1] + $progressionStep;
         }
     }
 
-    return $progression_numbers;
+    return $progressionNumbers;
 }
 
-function getQuestionData($progression_numbers, $replace = '..')
+function getQuestionData($progressionNumbers, $replace = '..')
 {
-    $qty = sizeof($progression_numbers) - 1;
-    $hidden_num_postion = rand(1, $qty);
+    $qty = sizeof($progressionNumbers) - 1;
+    $hiddenNumPostion = rand(1, $qty);
 
-    $answer = $progression_numbers[$hidden_num_postion];
-    $progression_numbers[$hidden_num_postion] = $replace;
+    $answer = $progressionNumbers[$hiddenNumPostion];
+    $progressionNumbers[$hiddenNumPostion] = $replace;
 
-    $question = implode(' ', $progression_numbers);
+    $question = implode(' ', $progressionNumbers);
 
     return array($question, $answer);
 }
