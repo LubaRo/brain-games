@@ -19,7 +19,7 @@ function playGame(string $description, callable $getGameData)
 
     line("Hello, %s!\n", $userName);
 
-    while ($correctAnswers < ATTEMPTS_QTY) {
+    for ($i = ATTEMPTS_QTY; $i > 0; $i = $i - 1) {
         list($question, $correctAnswer) = $getGameData();
 
         $userAnswer = prompt("Question: " . $question);
