@@ -37,4 +37,6 @@ function playGame(string $description, callable $getGameData)
     }
 
     line("Congratulations, %s!", $userName);
+
+    return true;
 }

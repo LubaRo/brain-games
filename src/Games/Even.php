@@ -16,8 +16,6 @@ function evenGamePlay()
     };
 
     playGame(DESCRIPTION, $getGameData);
-
-    return true;
 }
 
 function isEven($number)
