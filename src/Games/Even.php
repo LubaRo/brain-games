@@ -9,10 +9,8 @@ const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 function evenGamePlay()
 {
     $getGameData = function () {
-        $randomNum = rand(1, 100);
-
-        $question = "{$randomNum}";
-        $correctAnswer = getCorrectAnswer($randomNum);
+        $question = rand(1, 100);
+        $correctAnswer = isEven($question) ? 'yes' : 'no';
 
         return array($question, $correctAnswer);
     };
@@ -25,11 +23,4 @@ function evenGamePlay()
 function isEven($number)
 {
     return !($number & 1);
-}
-
-function getCorrectAnswer($number)
-{
-    $answer = isEven($number);
-
-    return $answer === true ? 'yes' : 'no';
 }
