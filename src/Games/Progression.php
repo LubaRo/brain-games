@@ -38,10 +38,10 @@ function getProgression($size)
 function getQuestionData($progressionNumbers, $replace = '..')
 {
     $qty = sizeof($progressionNumbers) - 1;
-    $hiddenNumPostion = rand(1, $qty);
+    $hiddenPostion = rand(1, $qty);
 
-    $answer = $progressionNumbers[$hiddenNumPostion];
-    $progressionNumbers[$hiddenNumPostion] = $replace;
+    $answer = $progressionNumbers[$hiddenPostion];
+    $progressionNumbers[$hiddenPostion] = $replace;
 
     $question = implode(' ', $progressionNumbers);
 
