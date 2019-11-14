@@ -10,7 +10,7 @@ const PROGRESSION_SIZE = 10;
 function progressionGameRun()
 {
     $getGameData = function () {
-        $progressionNumbers = getProgressionNumbers();
+        $progressionNumbers = getProgression(PROGRESSION_SIZE);
         list($question, $correctAnswer) = getQuestionData($progressionNumbers);
 
         return array($question, (string) $correctAnswer);
@@ -19,12 +19,12 @@ function progressionGameRun()
     playGame(DESCRIPTION, $getGameData);
 }
 
-function getProgressionNumbers()
+function getProgression($size)
 {
     $progressionNumbers = array();
     $progressionStep = rand(1, 100);
 
-    for ($i = 0; $i < PROGRESSION_SIZE; $i++) {
+    for ($i = 0; $i < $size; $i++) {
         if (!isset($progressionNumbers[$i - 1])) {
             $progressionNumbers[$i] = rand(1, 100) + $progressionStep;
         } else {
@@ -38,10 +38,10 @@ function getProgressionNumbers()
 function getQuestionData($progressionNumbers, $replace = '..')
 {
     $qty = sizeof($progressionNumbers) - 1;
-    $hiddenNumPostion = rand(1, $qty);
+    $hiddenPostion = rand(1, $qty);
 
-    $answer = $progressionNumbers[$hiddenNumPostion];
-    $progressionNumbers[$hiddenNumPostion] = $replace;
+    $answer = $progressionNumbers[$hiddenPostion];
+    $progressionNumbers[$hiddenPostion] = $replace;
 
     $question = implode(' ', $progressionNumbers);
 
