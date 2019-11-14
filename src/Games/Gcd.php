@@ -13,7 +13,7 @@ function gcdGameRun()
         $num2 = rand(1, 100);
 
         $question = "{$num1} {$num2}";
-        $correctAnswer = getGsd($num1, $num2);
+        $correctAnswer = getGcd($num1, $num2);
 
         return array($question, (string) $correctAnswer);
     };
@@ -21,7 +21,7 @@ function gcdGameRun()
     playGame(DESCRIPTION, $getGameData);
 }
 
-function getGsd($num1, $num2)
+function getGcd($num1, $num2)
 {
     while ($num1 != 0 && $num2 != 0) {
         if ($num1 > $num2) {
