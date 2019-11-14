@@ -1,4 +1,4 @@
-#Brain Games (php-project-lvl1)
+# Brain Games (php-project-lvl1)
 
 The set of mini-console games. 
 To win, you need to give three correct answers in a row.
