@@ -10,7 +10,7 @@ const PROGRESSION_SIZE = 10;
 function progressionGameRun()
 {
     $getGameData = function () {
-        $progressionNumbers = getProgressionNumbers();
+        $progressionNumbers = getProgression();
         list($question, $correctAnswer) = getQuestionData($progressionNumbers);
 
         return array($question, (string) $correctAnswer);
@@ -19,7 +19,7 @@ function progressionGameRun()
     playGame(DESCRIPTION, $getGameData);
 }
 
-function getProgressionNumbers()
+function getProgression()
 {
     $progressionNumbers = array();
     $progressionStep = rand(1, 100);
