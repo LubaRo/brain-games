@@ -14,7 +14,7 @@ function calculatorGameRun()
         $num1 = rand(1, 10);
         $num2 = rand(1, 10);
 
-        $mathSign = array_rand(MATH_SIGNS);
+        $mathSign = MATH_SIGNS[array_rand(MATH_SIGNS)];
         $question = "$num1 $mathSign $num2";
 
         $correctAnswer = getCorrectAnswer($num1, $num2, $mathSign);
