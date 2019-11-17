@@ -32,11 +32,9 @@ function playGame(string $description, callable $getGameData)
             line("'%s' is wrong answer ;(. Correct answer was '%s'.\n\n" .
                 "Let's try again, %s!", $userAnswer, $correctAnswer, $userName);
 
-            return false;
+            exit();
         }
     }
 
     line("Congratulations, %s!", $userName);
-
-    return true;
 }
