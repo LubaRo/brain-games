@@ -18,19 +18,17 @@ function playGame(string $description, callable $getGameData)
 
     line("Hello, %s!\n", $userName);
 
-    for ($i = 0; $i < ATTEMPTS_QTY; $i = $i + 1) {
+    for ($i = 0; $i < ATTEMPTS_QTY; $i += 1) {
         list($question, $correctAnswer) = $getGameData();
 
         $userAnswer = prompt("Question: " . $question);
         line("Your answer: %s\n", $userAnswer);
 
-        $isCorrect = $correctAnswer === $userAnswer ? true : false;
-
-        if ($isCorrect === true) {
+        if ($correctAnswer === $userAnswer) {
             line("Correct!\n");
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.\n\n" .
-                "Let's try again, %s!", $userAnswer, $correctAnswer, $userName);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'", $userAnswer, $correctAnswer);
+            line("Let's try again, %s!", $userName);
 
             exit();
         }
