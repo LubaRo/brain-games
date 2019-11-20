@@ -6,12 +6,18 @@ use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 const PROGRESSION_SIZE = 10;
+const REPLACEMENT = '..';
 
 function progressionGameRun()
 {
     $getGameData = function () {
         $progression = getProgression(PROGRESSION_SIZE, rand(1, 100), rand(1, 100));
-        list($question, $correctAnswer) = getQuestionData($progression);
+        $hiddenPostionIndex = rand(0, PROGRESSION_SIZE - 1);
+
+        $correctAnswer = $progression[$hiddenPostionIndex];
+        $progression[$hiddenPostionIndex] = REPLACEMENT;
+
+        $question = implode(' ', $progression);
 
         return array($question, (string) $correctAnswer);
     };
@@ -23,26 +29,9 @@ function getProgression($size, $startFrom, $step)
 {
     $progression = array();
 
-    for ($i = 0; $i < $size; $i++) {
-        if (empty($progression)) {
-            $progression[$i] = $startFrom;
-        } else {
-            $progression[$i] = $progression[$i - 1] + $step;
-        }
+    for ($i = 0; $i <= $size; $i++) {
+        $progression[$i] = $startFrom + $step * $i;
     }
 
     return $progression;
-}
-
-function getQuestionData($progression, $replacement = '..')
-{
-    $qty = sizeof($progression) - 1;
-    $hiddenPostionIndex = rand(1, $qty);
-
-    $answer = $progression[$hiddenPostionIndex];
-    $progression[$hiddenPostionIndex] = $replacement;
-
-    $question = implode(' ', $progression);
-
-    return array($question, $answer);
 }
