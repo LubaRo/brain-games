@@ -6,7 +6,7 @@ use function BrainGames\Engine\playGame;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
-function evenGameRun()
+function runEvenGame()
 {
     $getGameData = function () {
         $question = rand(1, 100);

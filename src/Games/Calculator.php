@@ -8,7 +8,7 @@ define('MATH_SIGNS', array('+', '-', '*'));
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-function calculatorGameRun()
+function runCalculatorGame()
 {
     $getGameData = function () {
         $num1 = rand(1, 10);

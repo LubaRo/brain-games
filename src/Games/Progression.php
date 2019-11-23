@@ -8,7 +8,7 @@ const DESCRIPTION = 'What number is missing in the progression?';
 const PROGRESSION_SIZE = 10;
 const REPLACEMENT = '..';
 
-function progressionGameRun()
+function runProgressionGame()
 {
     $getGameData = function () {
         $progression = getProgression(PROGRESSION_SIZE, rand(1, 100), rand(1, 100));
