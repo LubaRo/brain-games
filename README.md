@@ -1,4 +1,4 @@
-# Brain Games (php-project-lvl1)
+# Brain Games
 [![Maintainability](https://api.codeclimate.com/v1/badges/6020e678444a0917600e/maintainability)](https://codeclimate.com/github/LubaRo/php-project-lvl1/maintainability) [![Build Status](https://travis-ci.org/LubaRo/php-project-lvl1.svg?branch=master)](https://travis-ci.org/LubaRo/php-project-lvl1)
 
 The set of mini-console games. 
@@ -11,34 +11,12 @@ List of games:
 1. `brain-gcd` - Find the greatest common divisor of two numbers.
 1. `brain-progression` - Determine what number is missing.
 1. `brain-prime` - Determine if the number is prime.
+     
+**Installation:**
 
-To install this package run in console this command:
+To install this package run this command (Composer required):
 `composer global require lubaro/brain-games`
 
 After that you can start game by running the command: `brain-[game_name]`
-
-[![asciicast](https://asciinema.org/a/htBJX2tv114YfWTUXeWaR5aq1.svg)](https://asciinema.org/a/htBJX2tv114YfWTUXeWaR5aq1)
-___
-Is Even:
-   
-[![asciicast](https://asciinema.org/a/5BLY0IJGVDkmTmMbqu0gVt7QA.svg)](https://asciinema.org/a/5BLY0IJGVDkmTmMbqu0gVt7QA)
-
-___
-Calculator:
-
-[![asciicast](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh.svg)](https://asciinema.org/a/ie6cjK3V3Er8u333bFOLBkJJh)
-
-___
-Greatest common divisor:
-
-[![asciicast](https://asciinema.org/a/276809.svg)](https://asciinema.org/a/276809)
-
-___
-Progression:
-
-[![asciicast](https://asciinema.org/a/277304.svg)](https://asciinema.org/a/277304)
-
-___
-Is prime:
 
 [![asciicast](https://asciinema.org/a/278523.svg)](https://asciinema.org/a/278523)
