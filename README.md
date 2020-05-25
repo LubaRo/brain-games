@@ -1,5 +1,5 @@
 # Brain Games
-[![Maintainability](https://api.codeclimate.com/v1/badges/6020e678444a0917600e/maintainability)](https://codeclimate.com/github/LubaRo/php-project-lvl1/maintainability) [![Build Status](https://travis-ci.org/LubaRo/php-project-lvl1.svg?branch=master)](https://travis-ci.org/LubaRo/php-project-lvl1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6020e678444a0917600e/maintainability)](https://codeclimate.com/github/LubaRo/php-project-lvl1/maintainability) [![Build Status](https://travis-ci.org/LubaRo/brain-games.svg?branch=master)](https://travis-ci.org/LubaRo/brain-games)
 
 The set of mini-console games. 
 To win, you need to give three correct answers in a row.
